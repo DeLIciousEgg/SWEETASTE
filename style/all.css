@@ -114,13 +114,19 @@ blockquote, q { quotes: '' ''; }
 
 @media (max-width: 900px) { .subscribe__send { margin-bottom: 30px; } }
 
-@media (max-width: 600px) { .subscribe__send { width: 100%; } }
+@media (max-width: 600px) { .subscribe__send { width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; } }
 
 .subscribe__send > i { position: absolute; width: 24px; height: 24px; left: 16px; top: 18px; font-size: 24px; color: #3f5d45; }
 
-.subscribe__send > input { max-width: 320px; height: 56px; font-size: 24px; padding-left: 48px; border: none; background-color: #eaf0ed; color: #3f5d45; }
+@media (max-width: 600px) { .subscribe__send > i { left: 46px; } }
+
+.subscribe__send > input { max-width: 320px; width: 100%; height: 56px; font-size: 24px; padding-left: 48px; border: none; background-color: #eaf0ed; color: #3f5d45; }
+
+@media (max-width: 600px) { .subscribe__send > input { max-width: 100%; margin-left: 30px; } }
 
 .subscribe__send > a { border: none; padding: 20px 24px; background-color: #ffe180; color: #3f5d45; }
+
+@media (max-width: 600px) { .subscribe__send > a { margin-right: 30px; } }
 
 .subscribe__send > a:hover, .subscribe__send > a:active { background-color: #ffd54d; }
 
