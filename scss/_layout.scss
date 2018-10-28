@@ -1,0 +1,266 @@
+.wrap {
+  max-width: 940px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  flex-basis: 0;
+  position: relative;
+  @include media($phone) {
+    justify-content: space-between;
+  }
+  &__bar {
+    display: none;
+    @include media($phone) {
+      color: $primaryColor;
+      display: block;
+      width: 24px;
+      line-height: 84px;
+      padding-left: 30px;
+    }
+  }
+  &__logo > a {
+    background-image: url(../images/logo-all-dark.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 210px;
+    height: 100px;
+    display: inline-block;
+    white-space: nowrap;
+    text-indent: 101%;
+    overflow: hidden;
+    @include media($tablet-portrait) {
+      margin-left: 30px;
+    }
+    @include media($phone) {
+      background-image: url(../images/logotype-lg-dark.svg);
+      width: 115px;
+      height: 84px;
+    }
+  }
+  .menu {
+    max-height: 300px;
+  }
+  &__nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    @include media($phone) {
+      max-height: 0;
+      overflow: hidden;
+      flex-direction: column;
+      position: absolute;
+      z-index: 999;
+      left: 0;
+      right: 0;
+      top: 100px;
+      background-color: $tertiaryColor;
+      text-align: center;
+      transition: 1s max-height;
+    }
+    > li {
+      display: inline-block;
+      outline: none;
+      > a {
+        text-decoration: none;
+        color: $primaryColor;
+        display: block;
+        line-height: 90px;
+        padding: 0 30px;
+        @include media($phone) {
+          line-height: 60px;
+        }
+        &:hover,
+        &:active {
+          box-shadow: 0 5px 0 $primaryColor;
+          @include media($phone) {
+            box-shadow: none;
+            background-color: $specialColor;
+          }
+        }
+      }
+      .active {
+        box-shadow: 0 5px 0 $primaryColor;
+        @include media($phone) {
+          box-shadow: none;
+          background-color: $specialColor;
+        }
+      }
+    }
+  }
+  &__cart > i {
+    width: 24px;
+    padding-left: 20px;
+    line-height: 100px;
+    color: $primaryColor;
+    @include media($tablet-portrait) {
+      margin-right: 30px;
+    }
+    &:hover,
+    &:active {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+.subscribe {
+  background-color: $primaryColor;
+  margin-top: 40px;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 790px;
+    margin: {
+      right: auto;
+      left: auto;
+    }
+    @include media($tablet-portrait) {
+      flex-direction: column;
+    }
+    @include media($phone) {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    margin: {
+      top: 42px;
+      bottom: 42px;
+    }
+    @include media($tablet-portrait) {
+      margin-bottom: 30px;
+    }
+    > img {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+    }
+    > span {
+      font-size: 24px;
+      color: $whiteColor;
+    }
+  }
+  &__send {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include media($tablet-portrait) {
+      margin-bottom: 30px;
+    }
+    @include media($phone) {
+      width: 100%; 
+    }
+    > i {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 16px;
+      top: 18px;
+      font-size: 24px;
+      color: $primaryColor;
+    }
+    > input {
+      max-width: 320px;
+      height: 56px;
+      font-size: 24px;
+      padding-left: 48px;
+      border: none;
+      background-color: $tertiaryColor;
+      color: $primaryColor;
+    }
+    > a {
+      border: none;
+      padding: 20px 24px;
+      background-color: $specialColor;
+      color: $primaryColor;
+      &:hover,
+      &:active {
+        background-color: darken($specialColor, 10%);
+      }
+    }
+  }
+}
+.footer {
+  background-color: $tertiaryColor;
+  &__container {
+    max-width: 790px;
+    display: flex;
+    flex-direction: column;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    padding: {
+      top: 30px;
+      bottom: 30px;
+    }
+    @include media($tablet-portrait) {
+      padding: {
+        left: 30px;
+        right: 30px;
+      }
+    }
+  }
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > img {
+        width: 171px;
+        height: 26px;
+        @include media($phone) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &__content {
+      > li {
+        margin: 10px 0;
+        > a {
+          text-decoration: none;
+          color: $primaryColor;
+        }
+      }
+    }
+    &__right {
+      > img {
+        width: 60px;
+        height: 218px;
+      }
+      @include media($phone) {
+        display: none;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    @include media($phone) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__social {
+      > a > img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &__copyright {
+      color: $primaryColor;
+      @include media($phone) {
+        margin-top: 30px;
+      }
+    }
+  }
+}

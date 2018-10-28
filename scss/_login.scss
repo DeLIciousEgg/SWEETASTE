@@ -1,0 +1,165 @@
+.login {
+  max-width: 780px;
+  display: flex;
+  margin: {
+    top: 30px;
+    left: auto;
+    right: auto;
+  }
+  @include media($phone) {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: -40px;
+  }
+  &__register {
+    max-width: 390px;
+    width: 100%;
+    background-color: $primaryColor;
+    flex-basis: 50%;
+    height: 380px;
+    box-sizing: border-box;
+    position: relative;
+    @include media($phone) {
+      max-width: 100%;
+      flex-basis: 100%;
+      height: auto;
+    }
+    &__title {
+      font-size: 36px;
+      color: $whiteColor;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    &__socialLogin {
+      display: none;
+      @include media($phone) {
+        display: flex;
+        background-color: $tertiaryColor;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        > li {
+          margin: 30px 0;
+          > a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 56px;
+            line-height: 56px;
+            background-color: $whiteColor;
+            padding: 0 16px;
+            > img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+    &__text {
+      margin: {
+        left: 30px;
+        right: 30px;
+        bottom: 16px;
+      }
+      background-color: $tertiaryColor;
+      position: relative;
+      > i {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: $primaryColor;
+      }
+      > input {
+        width: 100%;
+        height: 56px;
+        line-height: 56px;
+        padding-left: 64px;
+        padding-right: 15px;
+        color: $secondaryColor;
+        font-size: 16px;
+        box-sizing: border-box;
+        background-color: $tertiaryColor;
+        border: none;
+        &::placeholder {
+          color: $secondaryColor;
+        }
+      }
+    }
+    &__chk {
+      margin: {
+        left: 30px;
+        bottom: 22px;
+      }
+      > input {
+        width: 16px;
+        height: 16px;
+      }
+      > label {
+        color: $tertiaryColor;
+      }
+    }
+    &__submit {
+      display: block;
+      text-align: center;
+      width: 100%;
+      line-height: 65px;
+      font-size: 24px;
+      background-color: $specialColor;
+      color: $primaryColor;
+      font-weight: 700;
+      text-decoration: none;
+      position: absolute;
+      bottom: 0;
+      @include media($phone) {
+        position: relative;
+      }
+      &:hover,
+      &:active {
+        background-color: darken($specialColor, 10%);
+        color: lighten($primaryColor, 10%);
+      }
+    }
+  }
+  &__socialLogin {
+    flex-basis: 50%;
+    background-color: $tertiaryColor;
+    padding: {
+      top: 40px;
+      bottom: 50px;
+    }
+    margin: {
+      top: 15px;
+      bottom: 15px;
+    }
+    height: 350px;
+    position: relative;
+    box-sizing: border-box;
+    @include media($phone) {
+      display: none;
+    }
+    > h3 {
+      text-align: center;
+      font-size: 24px;
+      color: $secondaryColor;
+      margin-bottom: 36px;
+    }
+    > li {
+      margin-bottom: 16px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 56px;
+      background-color: $whiteColor;
+      max-width: 330px;
+      height: 56px;
+      margin: 0 auto;
+    }
+  }
+}
